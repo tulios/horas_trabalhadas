@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  task_type_id: 1
+  description: desc 1
+  task_date: <%= Date.today() %>
+  worked_hours: <%= Time.gm(2009, 04, 22, 13, 10, 0, 0) %>
+
+two:
+  user_id: 1
+  task_type_id: 2
+  description: desc 2
+  task_date: <%= Date.today() %>
+  worked_hours: <%= Time.gm(2009, 04, 22, 13, 10, 0, 0) %>
+

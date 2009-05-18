@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    $j(document).ready(function(){
+          $j("#tabela").tablesorter({headers: { 1:{sorter: false}}});
+      }
+    );
+</script>
+  
+<span style="font-size: 24px;">Lista de projetos</span>&nbsp;(<%= link_to 'Novo', new_project_path %>)
+<br/><br/>
+
+<table id="tabela" class="tablesorter" width="100%">
+  <thead>
+    <tr>
+      <th style="color: black;" width="20%">Nome</th>
+      <th style="color: black;" colspan="5" width="80%">Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%=h project.name %></td>
+      <td><%=h project.description %></td>
+      <td width="5%"><%= link_to 'Detalhes', project %></td>
+      <td width="5%"><%= link_to 'Editar', edit_project_path(project) %></td>
+      <td width="5%"><%= link_to 'Apagar', project, :confirm => 'Você tem certeza?', :method => :delete %></td>
+      <td width="5%"><%= link_to 'associar-se', new_project_project_membership_path(project) %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

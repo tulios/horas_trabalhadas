@@ -1,0 +1,9 @@
+<div id="menu">
+  <ul>
+    <li><%= link_to "Projetos", projects_path, :class => marcar_aba("projects") %></li>
+    <li><%= link_to "Usuarios", users_path, :class => marcar_aba("users") %></li>
+    <li><%= link_to "Registrar horas", new_user_time_log_path(@current_user), :class => marcar_aba("time_logs") %></li>
+    <li><%= link_to "Relatório", new_summary_report_path, :class => marcar_aba("summary_reports") %></li>
+    <li><%= link_to "Sair", new_session_path, :method => :delete %></li>
+  </ul>
+</div>

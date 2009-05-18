@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    $j(document).ready(function(){
+          $j("#tabela").tablesorter({headers: { 4:{sorter: false}}});
+      }
+    );
+</script>
+
+<table id="tabela" class="tablesorter" width="100%">
+  <thead>
+    <tr>
+        <th style="color: black;" width="10%">Data</th>
+        <th style="color: black;" width="25%">Tempo</th>
+        <th style="color: black;" width="30%">Projeto</th>
+        <th style="color: black;" width="40%">Tarefa</th>
+        <th colspan="2" width="25%"/>
+    </tr>
+  </thead>
+  <tbody>
+  <% @time_logs.each do |tl| %>
+    <tr>
+        <td><%= tl.task_date %></td>
+        <td><%= tl.worked_hours %></td>
+        <td><%= tl.task_type.project.name %></td>
+        <td><%= tl.task_type.name %></td>
+        <td><%= link_to "Editar", edit_user_time_log_path(@current_user, tl) %></td>
+        <td><%= link_to "Remover", user_time_log_path(@current_user, tl), :method => :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

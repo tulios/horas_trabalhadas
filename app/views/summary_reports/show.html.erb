@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    $j(document).ready(function(){
+          $j("#tabela").tablesorter();
+      }
+    );
+</script>
+
+<%= link_to 'Novo Relatório', new_summary_report_path %>
+<br/><br/>
+
+<table id="tabela" class="tablesorter" width="100%">
+  <thead>
+    <tr>
+       <th style="color: black;" width="10%">Data</th>
+       <th style="color: black;" width="20%">Usuário</th>
+       <th style="color: black;" width="20%">Projeto</th>
+       <th style="color: black;" width="30%">Tipo de tarefa</th>
+       <th style="color: black;" width="20%">Horas Trabalhadas</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @summary_report.report_data.each do |rd| %>
+    <tr>
+      <td align="left"><%= rd[:task_date] %></td>
+      <td align="left"><%= h rd[:user] %></td>
+      <td align="left"><%= h rd[:project] %></td>
+      <td align="left"><%= h rd[:task] %></td>
+      <td align="left"><%= h rd[:total_work] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% (1..5).each do |number| %>
+
+  projectMembership<%= number %>:
+    project_id: 1
+    joined: <%= Date.today %>
+    user: <%= number %>
+
+<% end %>

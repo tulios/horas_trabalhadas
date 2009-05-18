@@ -1,0 +1,21 @@
+.errorMessage{
+	color:#ffffff;
+    font-weight: bold;
+	border: 1px solid #CC0000;
+	margin: 5px auto 5px auto;
+	padding: 2px 0px 4px 25px;
+	background: #000000 url(../images/negativo.gif) no-repeat 9px 8px ;
+	display:block;
+	list-style-type: none;
+}
+
+.successMessage{
+	color:#ffffff;
+    font-weight: bold;
+	border: 1px solid #009900;
+	margin: 5px auto 5px auto;
+	padding: 2px 0px 4px 25px;
+	background: #000000 url(../images/positivo.gif) no-repeat 9px 8px ;
+	display:block;
+	list-style-type: none;
+}
