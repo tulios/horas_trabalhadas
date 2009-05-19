@@ -1,20 +1,20 @@
-<h1>Editing project</h1>
+<h1>Editando projeto</h1>
 
 <% form_for(@project) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
+    <%= f.label "Nome" %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.label "Descrição" %><br />
+    <%= f.text_area :description, :cols => 70, :rows => 10 %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Atualizar' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Detalhar', @project %> |
+<%= link_to 'Voltar', projects_path %>

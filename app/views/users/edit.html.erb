@@ -1,4 +1,4 @@
-<h1>Editing user</h1>
+<h1>Editando usuário</h1>
 
 <% form_for(@user) do |f| %>
 	<%= render :partial => 'form', :locals => {:f => f} %>
@@ -7,5 +7,5 @@
     </p>
 <% end %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Detalhar', @user %> |
+<%= link_to 'Voltar', users_path %>

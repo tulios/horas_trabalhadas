@@ -1,29 +1,26 @@
-<h1><%=h @project.name %></h1>
+<span style="font-size: 24px;"><%=h @project.name %></span>
+(<%= link_to 'Editar', edit_project_path(@project) %>)
 
 <p>
   <%=h(@project.description).gsub("\n","<br />") if @project.description %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %>
-
-<h2>Usuário associados</h2>
+<span style="font-size: 18px;">Usuário associados</span>
+<% if !@project.users.include?(@current_user) %>
+  (<%= link_to 'Associar-se', new_project_project_membership_path(@project) %>)
+<% end %>
 
 <ul>
    <% @project.users.each do |user| %>
      <li><%= link_to user.name, user  %> </li>
-   <% end %>
-   
-   <li>
-      <%= link_to_unless @project.users.include?(@current_user),
-          'Associar-se', new_project_project_membership_path(@project) %>
-  </li>
+   <% end %>  
 </ul>
 
-<h2>Tipos de tarefa</h2>
+<span style="font-size: 18px;">Tipos de tarefa</span>
+(<%= link_to_if @project.users.include?(@current_user), 'Novo', new_project_task_type_path(@project) %>)
+
 <ul>
   <% @project.task_types.each do |task_type| %>
     <li><%= link_to task_type.name, edit_project_task_type_path(@project, task_type) %></li>
   <% end %>
-  <li><%= link_to_if @project.users.include?(@current_user), 'Novo tipo de tarefa',
-          new_project_task_type_path(@project) %></li>
 </ul>

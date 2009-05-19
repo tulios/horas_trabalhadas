@@ -4,20 +4,15 @@
 </p>
 
 <p>
-  <b>Password:</b>
-  <%=h @user.password %>
-</p>
-
-<p>
-  <b>Name:</b>
+  <b>Nome:</b>
   <%=h @user.name %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>E-mail:</b>
   <%=h @user.email %>
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Voltar', users_path %>
